@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+ <title>PHP OOP Code Practice</title>
+ <style>
+  body{font-family:verdana}
+ .phpcoding{width:900px; margin: 0 auto;background:#f1f1f1}
+ .headeroption, .footeroption{background:#2B81D7;color:#fff;text-align:center;padding:20px;}
+ .headeroption h2, .footeroption h2{margin:0}.maincontent{min-height:400px;padding:20px;}
+ </style>
+</head>
+<body>
+
+<div class="phpcoding">
+ <section class="headeroption">
+  <h2><?php echo "PHP OOP Code Practice"; ?></h2>
+ </section> 
+ <section class="maincontent">
+ 
+ 
+ 
+<?php
+    
+     include "Programming.php";
+	 
+	 $pro = new Programming();
+	 
+	 //serialize property by using build in function "serialize(object_name)" $ put this other variable like $ser
+	 $ser = serialize($pro);
+	 
+	 /*
+	 //create file & put values
+	 file_put_contents("programming.txt", $ser);
+	 echo $ser;
+	 */
+	 
+	 //get content from the file by using build in function "file_get_contents("file_name")" & put this into other variable like $getcontent.
+	 $getcontent = file_get_contents("programming.txt");
+	 
+	 //unserialize property variable
+	 $unser = unserialize($getcontent);
+	 
+	 echo "<pre>";
+	 //this is used for print like a class.
+	 print_r($unser);
+	 echo "</pre>";
+	 
+	 
+
+?>
+     
+   
+  </section>
+ <section class="footeroption">
+  <h2><?php echo "MD NAJMUL HOQUE OVI"; ?></h2>
+ </section>
+</div>
+</body>
+</html>
